@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+OpenWeatherCityStatsSurkovIVT/__init__.py
+OpenWeatherCityStatsSurkovIVT/getweatherdata.py
+OpenWeatherCityStatsSurkovIVT/getweatherdata_test.py
+OpenWeatherCityStatsSurkovIVT.egg-info/PKG-INFO
+OpenWeatherCityStatsSurkovIVT.egg-info/SOURCES.txt
+OpenWeatherCityStatsSurkovIVT.egg-info/dependency_links.txt
+OpenWeatherCityStatsSurkovIVT.egg-info/not-zip-safe
+OpenWeatherCityStatsSurkovIVT.egg-info/top_level.txt

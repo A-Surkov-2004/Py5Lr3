@@ -1,23 +1,15 @@
-from owm_key import owm_api_key
+
 import json
-import pytz
-import datetime
 
 
-def get_weather_data(place, api_key=None):
+
+def get_weather_data(place, api_key):
     import requests
     s = f'https://api.openweathermap.org/data/2.5/weather?q={place}&appid={api_key}'
     print(s);
     response = requests.get(s)
-    #print(dir(response))
-    #print(response.json())
     res_obj = json.loads(response.text)
     ans = extract(res_obj)
-        #res = f.read().decode('utf-8')
-
-        #res_obj = json.loads(res)
-
-    # print(res_json)
     return ans
     
     
@@ -43,16 +35,9 @@ if __name__ == "__main__":
 
     assert(str(extract(res_obj)) == """{"name":"Pskov","coord":{"lon":28.3496,"lat":57.8136},"country":"RU","feels_like (C)":17.68,"timezone":3.0}""")
 
-    ans = get_weather_data('Moscow', api_key=owm_api_key)
-    assert ans["name"] == "Moscow"
-    ans = get_weather_data('Saint Petersburg', api_key=owm_api_key)
-    assert ans["cord"]["lon"] == 30.2642
-    ans = get_weather_data('Dhaka', api_key=owm_api_key)
-    assert ans["timezone"] == 6.0
-    assert ans["feels_like (C)"] < 100
-    #pass
-    # напишите здесь тесты для проверки работы функции как минимум со следующими городами: Москва, Санкт-Петербург, Дакка.
-    # какие ещё тесты необходимо здесь написать, чтобы быть уверенным в полном покрытии тестами реализованной функции и
-    # соответствии требованиям задачи.
+get_weather_data.__doc__ = '''
+Первым аргументом является название города на английском языке. Вторым аргументом является API-ключ OpenWeather. Возвращает актуальную информацию о городе в удобной форме.
 
+The first argument is the name of the city in English. The second argument is the OpenWeather API key. Returns up-to-date information about the city in a convenient form.
+'''
 
